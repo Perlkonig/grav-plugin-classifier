@@ -85,6 +85,9 @@ class ClassifierPlugin extends Plugin
 
     private function insertClass($content, $tagname, $selector, $classname) {
         if ($selector !== null) {
+            if ($selector === '\*') {
+                $selector = '*';
+            }
             // strip space characters
             $nums = str_replace(' ', '', $selector);
             // explode on the comma
