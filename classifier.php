@@ -2,6 +2,7 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
+use Grav\Common\Utils;
 use RocketTheme\Toolbox\Event\Event;
 
 /**
@@ -111,11 +112,15 @@ class ClassifierPlugin extends Plugin
                     if (strpos($fulltag, 'class=') !== false) {
                         $fulltag = str_replace('class="', 'class="'.$classname.' ', $fulltag);
                     } else {
-                        $fulltag = str_replace('>', ' class="'.$classname.'">', $fulltag);
+                        if (Utils::endsWith($fulltag, '/>')) {
+                            $fulltag = str_replace('/>', ' class="'.$classname.'" />', $fulltag);
+                        } else {
+                            $fulltag = str_replace('>', ' class="'.$classname.'">', $fulltag);
+                        }
                     }
 
                     // replace existing <table> tag with modified one
-                    $str2 = preg_replace('/'.preg_quote($matches[0]).'/', $fulltag, $str2, 1);
+                    $str2 = preg_replace('/'.preg_quote($matches[0], '/').'/', $fulltag, $str2, 1);
                     $content = $str1.$str2;
                 }
                 // move offset

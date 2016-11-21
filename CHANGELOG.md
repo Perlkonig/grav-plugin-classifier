@@ -1,3 +1,10 @@
+# v1.0.2
+##  11/21/2016
+
+1. [](#bugfix)
+    * Fixed an issue that occurred with tags containing forward slashes.
+    * Self-closing tags are also now replaced properly, too.
+
 # v1.0.1
 ##  11/06/2016
 
