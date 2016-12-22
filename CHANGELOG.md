@@ -1,3 +1,9 @@
+# v1.0.3
+##  12/21/2016
+
+1. [](#bugfix)
+    * Tags in the global config are now managed properly.
+
 # v1.0.2
 ##  11/21/2016
 

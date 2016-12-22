@@ -64,6 +64,8 @@ classifier:
 
     * `class` is a string that will be inserted into the `class` attribute of the matching tags. It is inserted verbatim. The plugin does no checking that classes are not duplicated, misspelled, or malformed. It simply inserts the string.
 
+You can also insert a `classifier` tag in your global `frontmatter.yaml` or put `tags` into the global config (`user/config/plugins/classifier.yaml`).
+
 ### CSS
 
 If the class already exists in the loaded CSS, then great, but the plugin will also check for a dedicated CSS file and load it if found: `theme://assets/classifier.css`. 

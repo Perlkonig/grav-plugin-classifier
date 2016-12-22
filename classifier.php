@@ -75,9 +75,8 @@ class ClassifierPlugin extends Plugin
     {
         $page = $this->grav['page'];
         $output = $page->getRawContent();
-        $header = $page->header();
 
-        foreach ($header->classifier['tags'] as $tag) {
+        foreach ($this->config->get('plugins.classifier.tags') as $tag) {
             $output = $this->insertClass($output, $tag['tag'], $tag['nums'], $tag['class']);
         }
 
